@@ -6,13 +6,25 @@
 //  Copyright © 2017 Maxim Khatskevich. All rights reserved.
 //
 
+public
 typealias KeyValuePair = (String, Any)
 
 //===
 
-infix operator <<
+infix operator <<<
 
-func << (keyName: String, value: Any) -> KeyValuePair
+public
+func <<< (keyName: String, value: Any) -> KeyValuePair
 {
     return (keyName, value)
 }
+
+//===
+
+//infix operator </
+//
+//public
+//func </ (keyName: String, value: Any) -> KeyValuePair
+//{
+//    return (keyName, value)
+//}
