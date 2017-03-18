@@ -83,8 +83,13 @@ extension Project
             _ configureTarget: (inout Target) -> Void
             )
         {
-            tests
-                .append(Target(self.platform, name, .unitTest, configureTarget))
+            var ut = Target(self.platform, name, .unitTest, configureTarget)
+            
+            ut.dependencies.otherTarget(self.name)
+            
+            //===
+            
+            tests.append(ut)
         }
         
         public
@@ -94,8 +99,13 @@ extension Project
             _ configureTarget: (inout Target) -> Void
             )
         {
-            tests
-                .append(Target(self.platform, name, .uiTest, configureTarget))
+            var uit = Target(self.platform, name, .uiTest, configureTarget)
+            
+            uit.dependencies.otherTarget(self.name)
+            
+            //===
+            
+            tests.append(uit)
         }
         
         //---
