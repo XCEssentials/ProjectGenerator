@@ -201,6 +201,13 @@ enum Spec_1_2_0
         for t in targets
         {
             result <<< process(&idention, t)
+            
+            //===
+            
+            for tst in t.tests
+            {
+                result <<< process(&idention, tst)
+            }
         }
         
         //===
@@ -245,6 +252,10 @@ enum Spec_1_2_0
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#type
         
         result <<< (idention, "type: \"\(t.type.rawValue)\"")
+        
+        //===
+        
+        result <<< process(&idention, t.dependencies)
         
         //===
         
@@ -298,10 +309,6 @@ enum Spec_1_2_0
         //===
         
         result <<< process(&idention, t.configurations)
-        
-        //===
-        
-        result <<< process(&idention, t.dependencies)
         
         //===
         
