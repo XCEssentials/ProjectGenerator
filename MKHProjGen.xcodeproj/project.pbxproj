@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943179971E7D6B5000F3796D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943179961E7D6B5000F3796D /* Device.swift */; };
 		943C0C161E7B141400C8DF86 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C0F1E7B141400C8DF86 /* Misc.swift */; };
 		943C0C171E7B141400C8DF86 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C101E7B141400C8DF86 /* Platform.swift */; };
 		943C0C181E7B141400C8DF86 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C111E7B141400C8DF86 /* Project.swift */; };
@@ -20,14 +21,27 @@
 		943C0C371E7B17D700C8DF86 /* BuildConfig.Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C361E7B17D700C8DF86 /* BuildConfig.Defaults.swift */; };
 		943C0C391E7B181A00C8DF86 /* BuildConfig.Defaults.General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C381E7B181A00C8DF86 /* BuildConfig.Defaults.General.swift */; };
 		943C0C3B1E7B184300C8DF86 /* BuildConfig.Defaults.iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C3A1E7B184300C8DF86 /* BuildConfig.Defaults.iOS.swift */; };
-		943C0C4B1E7B198D00C8DF86 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C481E7B198D00C8DF86 /* Spec.swift */; };
 		943C0C4C1E7B198D00C8DF86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C4A1E7B198D00C8DF86 /* main.swift */; };
 		943C0C5B1E7B1D8B00C8DF86 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */; };
 		949521F41E7B2A2C00812390 /* MKHProjGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */; };
+		9495220B1E7BF62A00812390 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C4A1E7B198D00C8DF86 /* main.swift */; };
+		9495220D1E7BF62A00812390 /* MKHProjGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */; };
+		949522131E7BF66C00812390 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C481E7B198D00C8DF86 /* Spec.swift */; };
+		949522151E7BF93700812390 /* Spec.1.2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522141E7BF93700812390 /* Spec.1.2.0.swift */; };
+		949522171E7C03EC00812390 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522161E7C03EC00812390 /* Spec.swift */; };
+		949522191E7C3B9600812390 /* Target.Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522181E7C3B9600812390 /* Target.Dependencies.swift */; };
+		9495221B1E7CAE8500812390 /* Target.Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495221A1E7CAE8500812390 /* Target.Script.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		949521F21E7B2A2600812390 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 943C0BF91E7B134500C8DF86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 943C0C011E7B134500C8DF86;
+			remoteInfo = MKHProjGen;
+		};
+		949522091E7BF62A00812390 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 943C0BF91E7B134500C8DF86 /* Project object */;
 			proxyType = 1;
@@ -46,9 +60,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		9495220E1E7BF62A00812390 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		943179961E7D6B5000F3796D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		943C0C021E7B134500C8DF86 /* MKHProjGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKHProjGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C0F1E7B141400C8DF86 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		943C0C101E7B141400C8DF86 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -67,6 +91,12 @@
 		943C0C481E7B198D00C8DF86 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		943C0C4A1E7B198D00C8DF86 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		949522001E7BF57900812390 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		949522121E7BF62A00812390 /* MKHProjGenExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		949522141E7BF93700812390 /* Spec.1.2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.2.0.swift; sourceTree = "<group>"; };
+		949522161E7C03EC00812390 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
+		949522181E7C3B9600812390 /* Target.Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Dependencies.swift; sourceTree = "<group>"; };
+		9495221A1E7CAE8500812390 /* Target.Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Script.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +115,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9495220C1E7BF62A00812390 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9495220D1E7BF62A00812390 /* MKHProjGen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +133,7 @@
 				943C0C491E7B198D00C8DF86 /* Launcher */,
 				943C0C0D1E7B141400C8DF86 /* Src */,
 				943C0C131E7B141400C8DF86 /* Src-Extra */,
+				949521FF1E7BF57900812390 /* MKHProjGenExample */,
 				943C0C031E7B134500C8DF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +143,7 @@
 			children = (
 				943C0C021E7B134500C8DF86 /* MKHProjGen.framework */,
 				943C0C401E7B196200C8DF86 /* MKHProjGenLauncher */,
+				949522121E7BF62A00812390 /* MKHProjGenExample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,9 +161,14 @@
 				943C0C381E7B181A00C8DF86 /* BuildConfig.Defaults.General.swift */,
 				943C0C3A1E7B184300C8DF86 /* BuildConfig.Defaults.iOS.swift */,
 				943C0C2C1E7B169800C8DF86 /* Target.swift */,
+				949522181E7C3B9600812390 /* Target.Dependencies.swift */,
+				9495221A1E7CAE8500812390 /* Target.Script.swift */,
 				943C0C2E1E7B16FD00C8DF86 /* Target.Type.swift */,
+				943179961E7D6B5000F3796D /* Device.swift */,
 				943C0C0F1E7B141400C8DF86 /* Misc.swift */,
 				943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */,
+				949522161E7C03EC00812390 /* Spec.swift */,
+				949522141E7BF93700812390 /* Spec.1.2.0.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -150,6 +195,14 @@
 				943C0C4A1E7B198D00C8DF86 /* main.swift */,
 			);
 			path = Launcher;
+			sourceTree = "<group>";
+		};
+		949521FF1E7BF57900812390 /* MKHProjGenExample */ = {
+			isa = PBXGroup;
+			children = (
+				949522001E7BF57900812390 /* main.swift */,
+			);
+			path = MKHProjGenExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +256,24 @@
 			productReference = 943C0C401E7B196200C8DF86 /* MKHProjGenLauncher */;
 			productType = "com.apple.product-type.tool";
 		};
+		949522071E7BF62A00812390 /* MKHProjGenExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "MKHProjGenExample" */;
+			buildPhases = (
+				9495220A1E7BF62A00812390 /* Sources */,
+				9495220C1E7BF62A00812390 /* Frameworks */,
+				9495220E1E7BF62A00812390 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				949522081E7BF62A00812390 /* PBXTargetDependency */,
+			);
+			name = MKHProjGenExample;
+			productName = MKHProjGenLauncher;
+			productReference = 949522121E7BF62A00812390 /* MKHProjGenExample */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,6 +294,9 @@
 						DevelopmentTeam = UJA88X59XP;
 						ProvisioningStyle = Automatic;
 					};
+					949522071E7BF62A00812390 = {
+						DevelopmentTeam = UJA88X59XP;
+					};
 				};
 			};
 			buildConfigurationList = 943C0BFC1E7B134500C8DF86 /* Build configuration list for PBXProject "MKHProjGen" */;
@@ -239,6 +313,7 @@
 			targets = (
 				943C0C011E7B134500C8DF86 /* MKHProjGen */,
 				943C0C3F1E7B196200C8DF86 /* MKHProjGenLauncher */,
+				949522071E7BF62A00812390 /* MKHProjGenExample */,
 			);
 		};
 /* End PBXProject section */
@@ -280,16 +355,21 @@
 				943C0C171E7B141400C8DF86 /* Platform.swift in Sources */,
 				943C0C2B1E7B161600C8DF86 /* BuildConfig.swift in Sources */,
 				943C0C351E7B17B100C8DF86 /* BuildConfig.Type.swift in Sources */,
+				943179971E7D6B5000F3796D /* Device.swift in Sources */,
 				943C0C311E7B175600C8DF86 /* BuildConfig.Base.swift in Sources */,
 				943C0C331E7B178200C8DF86 /* BuildConfig.StandardSet.swift in Sources */,
 				943C0C371E7B17D700C8DF86 /* BuildConfig.Defaults.swift in Sources */,
 				943C0C391E7B181A00C8DF86 /* BuildConfig.Defaults.General.swift in Sources */,
-				943C0C5B1E7B1D8B00C8DF86 /* Manager.swift in Sources */,
 				943C0C3B1E7B184300C8DF86 /* BuildConfig.Defaults.iOS.swift in Sources */,
+				943C0C5B1E7B1D8B00C8DF86 /* Manager.swift in Sources */,
+				949522171E7C03EC00812390 /* Spec.swift in Sources */,
 				943C0C161E7B141400C8DF86 /* Misc.swift in Sources */,
 				943C0C181E7B141400C8DF86 /* Project.swift in Sources */,
 				943C0C2D1E7B169800C8DF86 /* Target.swift in Sources */,
 				943C0C2F1E7B16FD00C8DF86 /* Target.Type.swift in Sources */,
+				949522191E7C3B9600812390 /* Target.Dependencies.swift in Sources */,
+				9495221B1E7CAE8500812390 /* Target.Script.swift in Sources */,
+				949522151E7BF93700812390 /* Spec.1.2.0.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +378,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				943C0C4C1E7B198D00C8DF86 /* main.swift in Sources */,
-				943C0C4B1E7B198D00C8DF86 /* Spec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9495220A1E7BF62A00812390 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				949522131E7BF66C00812390 /* Spec.swift in Sources */,
+				9495220B1E7BF62A00812390 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +397,11 @@
 			isa = PBXTargetDependency;
 			target = 943C0C011E7B134500C8DF86 /* MKHProjGen */;
 			targetProxy = 949521F21E7B2A2600812390 /* PBXContainerItemProxy */;
+		};
+		949522081E7BF62A00812390 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 943C0C011E7B134500C8DF86 /* MKHProjGen */;
+			targetProxy = 949522091E7BF62A00812390 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -489,6 +582,44 @@
 			};
 			name = Release;
 		};
+		949522101E7BF62A00812390 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = UJA88X59XP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		949522111E7BF62A00812390 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = UJA88X59XP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -515,6 +646,15 @@
 			buildConfigurations = (
 				943C0C451E7B196200C8DF86 /* Debug */,
 				943C0C461E7B196200C8DF86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "MKHProjGenExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				949522101E7BF62A00812390 /* Debug */,
+				949522111E7BF62A00812390 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

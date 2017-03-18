@@ -11,8 +11,28 @@ enum Manager
 {
     public
     static
-    func prepareSpec(for projects: [Project]) -> String
+    func prepareSpec(
+        version: String = "1.2.0",
+        for project: Project
+        ) -> String
     {
-        return ""
+        let rawSpec: RawSpec
+        
+        //===
+        
+        switch version
+        {
+            case "1.2.0":
+                rawSpec = Spec_1_2_0.generate(for: project)
+            
+            default:
+                rawSpec = Spec_1_2_0.generate(for: project)
+        }
+        
+        //===
+        
+        return rawSpec
+            .map { "\(Spec.ident($0))\($1)" }
+            .joined(separator: "\n")
     }
 }

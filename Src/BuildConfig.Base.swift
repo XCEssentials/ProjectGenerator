@@ -25,22 +25,8 @@ extension BuildConfiguration
         
         //===
         
-        public private(set)
-        var sources: [String] = []
-        
-        public
-        mutating
-        func source(_ filePaths: String...)
-        {
-            sources.append(contentsOf: filePaths)
-        }
-        
-        public
-        mutating
-        func source(_ filePaths: [String])
-        {
-            sources.append(contentsOf: filePaths)
-        }
+//        public
+//        var externalConfig: String? = nil
         
         //===
         
@@ -53,12 +39,5 @@ extension BuildConfiguration
         {
             overrides.append(contentsOf: pairs)
         }
-        
-//        public
-//        mutating
-//        func override(_ pairs: [KeyValuePair])
-//        {
-//            overrides.append(contentsOf: pairs)
-//        }
     }
 }

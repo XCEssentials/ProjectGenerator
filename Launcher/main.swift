@@ -12,9 +12,7 @@ import MKHProjGen
 
 //===
 
-print(projects)
-print("//----------")
-print(Manager.prepareSpec(for: projects))
+print(Manager.prepareSpec(for: project))
 
 //===
 
