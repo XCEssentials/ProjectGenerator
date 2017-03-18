@@ -22,6 +22,8 @@ let project = Project("Main") { p in
     
     p.configurations.all.override(
         
+        "IPHONEOS_DEPLOYMENT_TARGET" <<< My.deploymentTarget, // bug wokraround
+        
         "DEVELOPMENT_TEAM" <<< My.developmentTeamId,
         
         "SWIFT_VERSION" <<< "3.0",
@@ -43,7 +45,8 @@ let project = Project("Main") { p in
         
         t.configurations.all.override(
             
-            "IPHONEOS_DEPLOYMENT_TARGET" <<< My.deploymentTarget,
+            "IPHONEOS_DEPLOYMENT_TARGET" <<< My.deploymentTarget, // bug wokraround
+        
             "PRODUCT_BUNDLE_IDENTIFIER" <<< BundleId.fwk,
             "INFOPLIST_FILE" <<< "Info/Fwk.plist",
             
@@ -67,7 +70,9 @@ let project = Project("Main") { p in
             //---
             
             ut.configurations.all.override(
-            
+                
+                "IPHONEOS_DEPLOYMENT_TARGET" <<< My.deploymentTarget, // bug wokraround
+                
                 "PRODUCT_BUNDLE_IDENTIFIER" <<< BundleId.tst,
                 "INFOPLIST_FILE" <<< "Info/Tst.plist",
                 "FRAMEWORK_SEARCH_PATHS" <<< "$(inherited) $(BUILT_PRODUCTS_DIR)"

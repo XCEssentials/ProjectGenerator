@@ -1,29 +1,29 @@
 //
-//  BuildConfig.Defaults.General.swift
+//  Project.BuildConfig.Defaults.General.swift
 //  MKHProjGen
 //
 //  Created by Maxim Khatskevich on 3/16/17.
 //  Copyright © 2017 Maxim Khatskevich. All rights reserved.
 //
 
-extension BuildConfiguration.Defaults
+extension Project.BuildConfiguration.Defaults
 {
     enum General
     {
         static
-            func debug(_ profiles: [String] = []) -> BuildConfiguration
+        func debug(_ profiles: [String] = []) -> Project.BuildConfiguration
         {
             return
-                BuildConfiguration
+                Project.BuildConfiguration
                     .Defaults
                     .debug(["general:debug"] + profiles)
         }
         
         static
-            func release(_ profiles: [String] = []) -> BuildConfiguration
+        func release(_ profiles: [String] = []) -> Project.BuildConfiguration
         {
             return
-                BuildConfiguration
+                Project.BuildConfiguration
                     .Defaults
                     .release(["general:release"] + profiles)
         }

@@ -13,6 +13,16 @@ extension Project
     struct Target
     {
         public
+        typealias BuildConfigurations =
+        (
+            all: BuildConfiguration.Base,
+            debug: BuildConfiguration,
+            release: BuildConfiguration
+        )
+        
+        //---
+        
+        public
         let name: String
         
         public
@@ -60,7 +70,18 @@ extension Project
         //---
         
         public
-        var configurations: BuildConfiguration.StandardSet
+        var configurations: BuildConfigurations =
+        (
+            Project.Target.BuildConfiguration.Base(
+                //
+            ),
+            Project.Target.BuildConfiguration(
+                Project.BuildConfiguration.Defaults.iOS.debug().name
+            ),
+            Project.Target.BuildConfiguration(
+                Project.BuildConfiguration.Defaults.iOS.release().name
+            )
+        )
         
         public
         var dependencies = Dependencies()
@@ -121,53 +142,6 @@ extension Project
             self.name = name
             self.platform = platform
             self.type = type
-            
-            //---
-            
-            switch (platform, type)
-            {
-            case (.iOS, .framework):
-                self.configurations =
-                    (
-                        BuildConfiguration.Defaults.iOS.base(
-                            ["framework"]
-                        ),
-                        BuildConfiguration.Defaults.iOS.debug(
-                            //
-                        ),
-                        BuildConfiguration.Defaults.iOS.release(
-                            //
-                        )
-                )
-                
-            case (.iOS, .unitTest):
-                self.configurations =
-                    (
-                        BuildConfiguration.Defaults.iOS.base(
-                            ["bundle.unit-test"]
-                        ),
-                        BuildConfiguration.Defaults.iOS.debug(
-                            //
-                        ),
-                        BuildConfiguration.Defaults.iOS.release(
-                            //
-                        )
-                )
-                
-            default:
-                self.configurations =
-                    (
-                        BuildConfiguration.Base(
-                            //
-                        ),
-                        BuildConfiguration.Defaults.debug(
-                            //
-                        ),
-                        BuildConfiguration.Defaults.release(
-                            //
-                        )
-                )
-            }
             
             //---
             
