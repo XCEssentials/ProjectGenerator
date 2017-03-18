@@ -7,7 +7,7 @@
 //
 
 public
-typealias KeyValuePair = (String, Any)
+typealias KeyValuePair = (key: String, value: Any)
 
 //===
 

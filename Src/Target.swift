@@ -47,8 +47,29 @@ extension Project
         
         //---
         
+        public private(set)
+        var i18nResources: [String] = []
+        
+        public
+        mutating
+        func i18nResource(_ paths: String...)
+        {
+            i18nResources.append(contentsOf: paths)
+        }
+        
+        //---
+        
         public
         var configurations: BuildConfiguration.StandardSet
+        
+        public
+        var dependencies = Dependencies()
+        
+        public
+        var scripts = Scripts()
+        
+        public
+        var includeCocoapods = false
         
         //---
         
