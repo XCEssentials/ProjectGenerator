@@ -61,6 +61,11 @@ let project = Project("Main") { p in
             "SKIP_INSTALL" <<< "YES"
         )
         
+        t.configurations.debug.override(
+            
+            "MTL_ENABLE_DEBUG_INFO" <<< true
+        )
+        
         //---
     
         t.unitTests { ut in
@@ -71,11 +76,21 @@ let project = Project("Main") { p in
             
             ut.configurations.all.override(
                 
+                // very important for unit tests,
+                // prevents the error when unit test do not start at all
+                "LD_RUNPATH_SEARCH_PATHS" <<<
+                "$(inherited) @executable_path/Frameworks @loader_path/Frameworks",
+                
                 "IPHONEOS_DEPLOYMENT_TARGET" <<< My.deploymentTarget, // bug wokraround
                 
                 "PRODUCT_BUNDLE_IDENTIFIER" <<< BundleId.tst,
                 "INFOPLIST_FILE" <<< "Info/Tst.plist",
                 "FRAMEWORK_SEARCH_PATHS" <<< "$(inherited) $(BUILT_PRODUCTS_DIR)"
+            )
+            
+            ut.configurations.debug.override(
+                
+                "MTL_ENABLE_DEBUG_INFO" <<< true
             )
         }
     }
