@@ -238,7 +238,7 @@ enum Spec_1_2_0
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#platform
         
-        result <<< (idention, "platform: \(t.platform)")
+        result <<< (idention, "platform: \(t.platform.rawValue)")
         
         //===
         
