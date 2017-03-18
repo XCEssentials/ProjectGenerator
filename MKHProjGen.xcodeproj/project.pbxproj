@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		943179971E7D6B5000F3796D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943179961E7D6B5000F3796D /* Device.swift */; };
+		943179991E7D82D500F3796D /* Project.Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943179981E7D820C00F3796D /* Project.Struct.swift */; };
 		943C0C161E7B141400C8DF86 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C0F1E7B141400C8DF86 /* Misc.swift */; };
 		943C0C171E7B141400C8DF86 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C101E7B141400C8DF86 /* Platform.swift */; };
 		943C0C181E7B141400C8DF86 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C111E7B141400C8DF86 /* Project.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		943179961E7D6B5000F3796D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		943179981E7D820C00F3796D /* Project.Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.Struct.swift; path = ../../../Project.Struct.swift; sourceTree = "<group>"; };
 		943C0C021E7B134500C8DF86 /* MKHProjGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKHProjGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C0F1E7B141400C8DF86 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		943C0C101E7B141400C8DF86 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				943C0C4A1E7B198D00C8DF86 /* main.swift */,
+				943179981E7D820C00F3796D /* Project.Struct.swift */,
 			);
 			path = Launcher;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				943C0C4C1E7B198D00C8DF86 /* main.swift in Sources */,
+				943179991E7D82D500F3796D /* Project.Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
