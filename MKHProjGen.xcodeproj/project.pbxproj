@@ -93,7 +93,6 @@
 		943C0C481E7B198D00C8DF86 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		943C0C4A1E7B198D00C8DF86 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		949522001E7BF57900812390 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		949522121E7BF62A00812390 /* MKHProjGenExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		949522141E7BF93700812390 /* Spec.1.2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.2.0.swift; sourceTree = "<group>"; };
 		949522161E7C03EC00812390 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
@@ -135,7 +134,6 @@
 				943C0C491E7B198D00C8DF86 /* Launcher */,
 				943C0C0D1E7B141400C8DF86 /* Src */,
 				943C0C131E7B141400C8DF86 /* Src-Extra */,
-				949521FF1E7BF57900812390 /* MKHProjGenExample */,
 				943C0C031E7B134500C8DF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,14 +196,6 @@
 				943179981E7D820C00F3796D /* Project.Struct.swift */,
 			);
 			path = Launcher;
-			sourceTree = "<group>";
-		};
-		949521FF1E7BF57900812390 /* MKHProjGenExample */ = {
-			isa = PBXGroup;
-			children = (
-				949522001E7BF57900812390 /* main.swift */,
-			);
-			path = MKHProjGenExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
