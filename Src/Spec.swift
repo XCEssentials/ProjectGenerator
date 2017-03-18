@@ -34,4 +34,16 @@ enum Spec
     {
         return Array(repeating: "  ", count: idention).joined()
     }
+    
+    static
+    func key(_ v: Any) -> String
+    {
+        return "\(v):"
+    }
+    
+    static
+    func value(_ v: Any) -> String
+    {
+        return " \"\(v)\""
+    }
 }
