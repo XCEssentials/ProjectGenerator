@@ -12,27 +12,15 @@ import MKHProjGen
 
 //===
 
-print(projects)
-print("//----------")
-print(Manager.prepareSpec(for: projects))
+let specData =
+    Manager.prepareSpec(for: project)
+    .data(using: .utf8)
 
-//===
+let targetPath = "\(CommandLine.arguments[1])/project.yml"
 
-//print(CommandLine.arguments)
-
-//print(FileManager.default.currentDirectoryPath)
-
-//FileManager.default.createFile(atPath: <#T##String#>, contents: <#T##Data?#>, attributes: <#T##[String : Any]?#>)
-
-//FileManager.default.newScriptingObject(of: <#T##AnyClass#>, forValueForKey: <#T##String#>, withContentsValue: <#T##Any?#>, properties: <#T##[String : Any]#>)
-
-//===
-
-// generate Specfile/project.yml for Struct,
-
-//===
-
-// place it into temp location,
-// run 'struct -g'
-// cleanup??
-
+FileManager
+    .default
+    .createFile(
+        atPath: targetPath,
+        contents: specData,
+        attributes: nil)

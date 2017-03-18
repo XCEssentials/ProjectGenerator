@@ -10,9 +10,10 @@ public
 extension Project
 {
     public
-    enum Platform
+    enum Platform: String
     {
         case
-            iOS
+            iOS = "ios" /*,
+            macOS = "mac" */
     }
 }
