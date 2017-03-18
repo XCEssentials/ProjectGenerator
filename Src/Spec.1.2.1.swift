@@ -57,6 +57,10 @@ enum Spec_1_2_1
         
         //===
         
+        result <<< (0, "") // empty line in the EOF
+        
+        //===
+        
         return result
     }
     
