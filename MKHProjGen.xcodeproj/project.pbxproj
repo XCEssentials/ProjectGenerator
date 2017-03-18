@@ -28,7 +28,7 @@
 		9495220B1E7BF62A00812390 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C4A1E7B198D00C8DF86 /* main.swift */; };
 		9495220D1E7BF62A00812390 /* MKHProjGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */; };
 		949522131E7BF66C00812390 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C481E7B198D00C8DF86 /* Spec.swift */; };
-		949522151E7BF93700812390 /* Spec.1.2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522141E7BF93700812390 /* Spec.1.2.0.swift */; };
+		949522151E7BF93700812390 /* Spec.1.2.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522141E7BF93700812390 /* Spec.1.2.1.swift */; };
 		949522171E7C03EC00812390 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522161E7C03EC00812390 /* Spec.swift */; };
 		949522191E7C3B9600812390 /* Target.Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949522181E7C3B9600812390 /* Target.Dependencies.swift */; };
 		9495221B1E7CAE8500812390 /* Target.Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9495221A1E7CAE8500812390 /* Target.Script.swift */; };
@@ -94,7 +94,7 @@
 		943C0C4A1E7B198D00C8DF86 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		949522121E7BF62A00812390 /* MKHProjGenExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenExample; sourceTree = BUILT_PRODUCTS_DIR; };
-		949522141E7BF93700812390 /* Spec.1.2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.2.0.swift; sourceTree = "<group>"; };
+		949522141E7BF93700812390 /* Spec.1.2.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.2.1.swift; sourceTree = "<group>"; };
 		949522161E7C03EC00812390 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		949522181E7C3B9600812390 /* Target.Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Dependencies.swift; sourceTree = "<group>"; };
 		9495221A1E7CAE8500812390 /* Target.Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Script.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				943C0C0F1E7B141400C8DF86 /* Misc.swift */,
 				943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */,
 				949522161E7C03EC00812390 /* Spec.swift */,
-				949522141E7BF93700812390 /* Spec.1.2.0.swift */,
+				949522141E7BF93700812390 /* Spec.1.2.1.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 				943C0C2F1E7B16FD00C8DF86 /* Target.Type.swift in Sources */,
 				949522191E7C3B9600812390 /* Target.Dependencies.swift in Sources */,
 				9495221B1E7CAE8500812390 /* Target.Script.swift in Sources */,
-				949522151E7BF93700812390 /* Spec.1.2.0.swift in Sources */,
+				949522151E7BF93700812390 /* Spec.1.2.1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

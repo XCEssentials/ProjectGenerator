@@ -1,5 +1,5 @@
 //
-//  Spec.1.2.0.swift
+//  Spec.1.2.1.swift
 //  MKHProjGen
 //
 //  Created by Maxim Khatskevich on 3/17/17.
@@ -10,7 +10,7 @@ import Foundation
 
 //===
 
-enum Spec_1_2_0
+enum Spec_1_2
 {
     static
     func generate(for p: Project) -> RawSpec
@@ -27,7 +27,7 @@ enum Spec_1_2_0
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#version-number
         
-        result <<< (idention, "version: 1.2.0")
+        result <<< (idention, "version: 1.2.1")
         
         //===
         
