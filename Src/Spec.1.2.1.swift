@@ -1,5 +1,5 @@
 //
-//  Spec.1.2.0.swift
+//  Spec.1.2.1.swift
 //  MKHProjGen
 //
 //  Created by Maxim Khatskevich on 3/17/17.
@@ -10,7 +10,7 @@ import Foundation
 
 //===
 
-enum Spec_1_2_0
+enum Spec_1_2_1
 {
     static
     func generate(for p: Project) -> RawSpec
@@ -27,7 +27,7 @@ enum Spec_1_2_0
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#version-number
         
-        result <<< (idention, "version: 1.2.0")
+        result <<< (idention, "version: 1.2.1")
         
         //===
         
@@ -65,7 +65,7 @@ enum Spec_1_2_0
     static
     func process(
         _ idention: inout Int,
-        _ set: BuildConfiguration.StandardSet
+        _ set: Project.BuildConfigurations
         ) -> RawSpec
     {
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#configurations
@@ -101,8 +101,8 @@ enum Spec_1_2_0
     static
     func process(
         _ idention: inout Int,
-        _ b: BuildConfiguration.Base,
-        _ c: BuildConfiguration
+        _ b: Project.BuildConfiguration.Base,
+        _ c: Project.BuildConfiguration
         ) -> RawSpec
     {
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#configurations
@@ -477,6 +477,88 @@ enum Spec_1_2_0
                 result <<< (idention, "    codeSignOnCopy: \(f.codeSignOnCopy)")
             }
         }
+        
+        //===
+        
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        _ set: Project.Target.BuildConfigurations
+        ) -> RawSpec
+    {
+        // https://github.com/lyptt/struct/issues/77#issuecomment-287573381
+        
+        //===
+        
+        var result: RawSpec = []
+        
+        //===
+        
+        result <<< (idention, "configurations:")
+        
+        //===
+        
+        idention += 1
+        
+        //===
+        
+        result <<< process(&idention, set.all, set.debug)
+        result <<< process(&idention, set.all, set.release)
+        
+        //===
+        
+        idention -= 1
+        
+        //===
+        
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        _ b: Project.Target.BuildConfiguration.Base,
+        _ c: Project.Target.BuildConfiguration
+        ) -> RawSpec
+    {
+        // https://github.com/lyptt/struct/issues/77#issuecomment-287573381
+        
+        //===
+        
+        var result: RawSpec = []
+        
+        //===
+        
+        result <<< (idention, "\(c.name):")
+        
+        //===
+        
+        idention += 1
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#overrides
+        
+        result <<< (idention, "overrides:")
+        idention += 1
+        
+        for o in b.overrides + c.overrides
+        {
+            result <<< (idention, "\(o.key): \(o.value)")
+        }
+        
+        idention -= 1
+        
+        //===
+        
+        idention -= 1
         
         //===
         

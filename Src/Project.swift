@@ -10,12 +10,22 @@ public
 struct Project
 {
     public
+    typealias BuildConfigurations =
+    (
+        all: BuildConfiguration.Base,
+        debug: BuildConfiguration,
+        release: BuildConfiguration
+    )
+    
+    //---
+    
+    public
     let name: String
     
     //---
     
     public
-    var configurations: BuildConfiguration.StandardSet =
+    var configurations: BuildConfigurations =
     (
         BuildConfiguration.Base(
             // nothing on this level
