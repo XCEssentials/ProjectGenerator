@@ -546,15 +546,10 @@ enum Spec_1_2_1
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#overrides
         
-        result <<< (idention, "overrides:")
-        idention += 1
-        
         for o in b.overrides + c.overrides
         {
             result <<< (idention, "\(o.key): \(o.value)")
         }
-        
-        idention -= 1
         
         //===
         
