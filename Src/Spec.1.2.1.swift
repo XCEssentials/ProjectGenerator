@@ -27,7 +27,7 @@ enum Spec_1_2_1
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#version-number
         
-        result <<< (idention, "version: 1.2.1")
+        result <<< (idention, Spec.key("version") + " 1.2.1")
         
         //===
         
@@ -39,21 +39,25 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "variants:")
+        result <<< (idention, Spec.key("variants"))
         
         idention += 1
         
-        result <<< (idention, "$base:")
+        result <<< (idention, Spec.key("$base"))
         
         idention += 1
         
-        result <<< (idention, "abstract: true")
+        result <<< (idention, Spec.key("abstract") + " true")
         
         idention -= 1
         
-        result <<< (idention, "\(p.name):")
+        result <<< (idention, Spec.key(p.name))
         
         idention -= 1
+        
+        //===
+        
+        result <<< (0, "") // empty line in the EOF
         
         //===
         
@@ -76,7 +80,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "configurations:")
+        result <<< (idention, Spec.key("configurations"))
         
         //===
         
@@ -113,7 +117,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "\(c.name):")
+        result <<< (idention, Spec.key(c.name))
         
         //===
         
@@ -121,7 +125,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "type: \(c.type)")
+        result <<< (idention, Spec.key("type") + Spec.value(c.type))
         
         //===
         
@@ -133,7 +137,7 @@ enum Spec_1_2_1
             // NOTE: when using xcconfig files,
             // any overrides or profiles will be ignored.
             
-            result <<< (idention, "source: \(externalConfig)")
+            result <<< (idention, Spec.key("source") + Spec.value(externalConfig) )
         }
         else
         {
@@ -143,23 +147,23 @@ enum Spec_1_2_1
             
             // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#profiles
             
-            result <<< (idention, "profiles:")
+            result <<< (idention, Spec.key("profiles"))
             
             for p in b.profiles + c.profiles
             {
-                result <<< (idention, "- \(p)")
+                result <<< (idention, "-" + Spec.value(p))
             }
             
             //===
             
             // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#overrides
             
-            result <<< (idention, "overrides:")
+            result <<< (idention, Spec.key("overrides"))
             idention += 1
             
             for o in b.overrides + c.overrides
             {
-                result <<< (idention, "\(o.key): \(o.value)")
+                result <<< (idention, Spec.key(o.key) + Spec.value(o.value))
             }
             
             idention -= 1
@@ -190,7 +194,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "targets:")
+        result <<< (idention, Spec.key("targets"))
         
         //===
         
@@ -235,7 +239,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "\(t.name):")
+        result <<< (idention, Spec.key(t.name))
         
         //===
         
@@ -245,13 +249,13 @@ enum Spec_1_2_1
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#platform
         
-        result <<< (idention, "platform: \(t.platform.rawValue)")
+        result <<< (idention, Spec.key("platform") + Spec.value(t.platform.rawValue))
         
         //===
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#type
         
-        result <<< (idention, "type: \"\(t.type.rawValue)\"")
+        result <<< (idention, Spec.key("type") + Spec.value(t.type.rawValue))
         
         //===
         
@@ -268,7 +272,7 @@ enum Spec_1_2_1
             
             for path in t.includes
             {
-                result <<< (idention, "- \(path)")
+                result <<< (idention, "-" + Spec.value(path))
             }
         }
         
@@ -279,13 +283,13 @@ enum Spec_1_2_1
         if
             !t.excludes.isEmpty
         {
-            result <<< (idention, "excludes:")
+            result <<< (idention, Spec.key("excludes"))
             idention += 1
-            result <<< (idention, "files:")
+            result <<< (idention, Spec.key("files"))
             
             for path in t.excludes
             {
-                result <<< (idention, "- \(path)")
+                result <<< (idention, "-" + Spec.value(path))
             }
             
             idention -= 1
@@ -298,11 +302,11 @@ enum Spec_1_2_1
         if
             !t.i18nResources.isEmpty
         {
-            result <<< (idention, "i18n-resources:")
+            result <<< (idention, Spec.key("i18n-resources"))
             
             for path in t.i18nResources
             {
-                result <<< (idention, "- \(path)")
+                result <<< (idention, "-" + Spec.value(path))
             }
         }
         
@@ -321,7 +325,9 @@ enum Spec_1_2_1
         if
             t.includeCocoapods
         {
-            result <<< (idention, "includes_cocoapods: \(t.includeCocoapods)")
+            result <<<
+                (idention,
+                 Spec.key("includes_cocoapods") + Spec.value(t.includeCocoapods))
         }
         
         //===
@@ -355,7 +361,7 @@ enum Spec_1_2_1
             !deps.binaries.isEmpty ||
             !deps.projects.isEmpty
         {
-            result <<< (idention, "references:")
+            result <<< (idention, Spec.key("references"))
             
             //===
             
@@ -388,7 +394,7 @@ enum Spec_1_2_1
         
         for dep in fromSDK
         {
-            result <<< (idention, "- sdkroot:\(dep)")
+            result <<< (idention, "-" + Spec.value("sdkroot:\(dep)"))
         }
         
         //===
@@ -414,7 +420,7 @@ enum Spec_1_2_1
         
         for t in targets
         {
-            result <<< (idention, "- \(t)")
+            result <<< (idention, "-" + Spec.value(t))
         }
         
         //===
@@ -440,8 +446,8 @@ enum Spec_1_2_1
         
         for b in binaries
         {
-            result <<< (idention, "- location: \(b.location)")
-            result <<< (idention, "  codeSignOnCopy: \(b.codeSignOnCopy)")
+            result <<< (idention, Spec.key("- location") + Spec.value(b.location))
+            result <<< (idention, Spec.key("  codeSignOnCopy") + Spec.value(b.codeSignOnCopy))
         }
         
         //===
@@ -467,14 +473,14 @@ enum Spec_1_2_1
         
         for p in projects
         {
-            result <<< (idention, "- location: \(p.location)")
-            result <<< (idention, "  frameworks:")
+            result <<< (idention, Spec.key("- location") + Spec.value(p.location))
+            result <<< (idention, Spec.key("  frameworks"))
             
             for f in p.frameworks
             {
-                result <<< (idention, "  - name: \(f.name)")
-                result <<< (idention, "    copy: \(f.copy)")
-                result <<< (idention, "    codeSignOnCopy: \(f.codeSignOnCopy)")
+                result <<< (idention, Spec.key("  - name") + Spec.value(f.name))
+                result <<< (idention, Spec.key("    copy") + Spec.value(f.copy))
+                result <<< (idention, Spec.key("    codeSignOnCopy") + Spec.value(f.codeSignOnCopy))
             }
         }
         
@@ -499,7 +505,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "configurations:")
+        result <<< (idention, Spec.key("configurations"))
         
         //===
         
@@ -536,7 +542,7 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "\(c.name):")
+        result <<< (idention, Spec.key(c.name))
         
         //===
         
@@ -548,7 +554,7 @@ enum Spec_1_2_1
         
         for o in b.overrides + c.overrides
         {
-            result <<< (idention, "\(o.key): \(o.value)")
+            result <<< (idention, Spec.key(o.key) + Spec.value(o.value))
         }
         
         //===
@@ -581,7 +587,7 @@ enum Spec_1_2_1
             !scripts.beforeBuilds.isEmpty ||
             !scripts.afterBuilds.isEmpty
         {
-            result <<< (idention, "scripts:")
+            result <<< (idention, Spec.key("scripts"))
             
             //===
             
@@ -621,7 +627,7 @@ enum Spec_1_2_1
         
         for s in regulars
         {
-            result <<< (idention, "- \(s)")
+            result <<< (idention, "-" + Spec.value(s))
         }
         
         //===
@@ -645,11 +651,11 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "prebuild:")
+        result <<< (idention, Spec.key("prebuild"))
         
         for s in beforeBuild
         {
-            result <<< (idention, "- \(s)")
+            result <<< (idention, "-" + Spec.value(s))
         }
         
         //===
@@ -673,11 +679,11 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "postbuild:")
+        result <<< (idention, Spec.key("postbuild"))
         
         for s in afterBuild
         {
-            result <<< (idention, "- \(s)")
+            result <<< (idention, "-" + Spec.value(s))
         }
         
         //===
