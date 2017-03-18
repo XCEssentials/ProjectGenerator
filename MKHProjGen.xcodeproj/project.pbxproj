@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		943179961E7D6B5000F3796D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		943179981E7D820C00F3796D /* Project.Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.Struct.swift; path = ../../../Project.Struct.swift; sourceTree = "<group>"; };
+		943179981E7D820C00F3796D /* Project.Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.Struct.swift; path = ../../../../Project.Struct.swift; sourceTree = "<group>"; };
 		943C0C021E7B134500C8DF86 /* MKHProjGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKHProjGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C0F1E7B141400C8DF86 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		943C0C101E7B141400C8DF86 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 		943C0C481E7B198D00C8DF86 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		943C0C4A1E7B198D00C8DF86 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		943C0C5A1E7B1D8B00C8DF86 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		949522001E7BF57900812390 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		949522121E7BF62A00812390 /* MKHProjGenExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		949522141E7BF93700812390 /* Spec.1.2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.2.0.swift; sourceTree = "<group>"; };
 		949522161E7C03EC00812390 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
@@ -135,7 +134,6 @@
 				943C0C491E7B198D00C8DF86 /* Launcher */,
 				943C0C0D1E7B141400C8DF86 /* Src */,
 				943C0C131E7B141400C8DF86 /* Src-Extra */,
-				949521FF1E7BF57900812390 /* MKHProjGenExample */,
 				943C0C031E7B134500C8DF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,14 +196,6 @@
 				943179981E7D820C00F3796D /* Project.Struct.swift */,
 			);
 			path = Launcher;
-			sourceTree = "<group>";
-		};
-		949521FF1E7BF57900812390 /* MKHProjGenExample */ = {
-			isa = PBXGroup;
-			children = (
-				949522001E7BF57900812390 /* main.swift */,
-			);
-			path = MKHProjGenExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +423,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -485,7 +475,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
