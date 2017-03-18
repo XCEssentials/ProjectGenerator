@@ -12,11 +12,11 @@ import MKHProjGen
 
 //===
 
-print(Manager.prepareSpec(for: project))
+//print(Manager.prepareSpec(for: project))
 
 //===
 
-//print(CommandLine.arguments)
+print(CommandLine.arguments)
 
 //print(FileManager.default.currentDirectoryPath)
 
