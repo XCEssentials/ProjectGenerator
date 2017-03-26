@@ -57,6 +57,11 @@ extension Project
         
         //---
         
+        public
+        var sourceOptions: [String: String] = [:]
+        
+        //---
+        
         public private(set)
         var i18nResources: [String] = []
         
