@@ -74,10 +74,10 @@
 		943179981E7D820C00F3796D /* Project.Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.Struct.swift; path = ../../../../Project.Struct.swift; sourceTree = "<group>"; };
 		943C0C021E7B134500C8DF86 /* MKHProjGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKHProjGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C141E7B141400C8DF86 /* MKHProjGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHProjGen.h; sourceTree = "<group>"; };
-		943C0C401E7B196200C8DF86 /* MKHProjGenLauncher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenLauncher; sourceTree = BUILT_PRODUCTS_DIR; };
+		943C0C401E7B196200C8DF86 /* Launcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Launcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C481E7B198D00C8DF86 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		943C0C4A1E7B198D00C8DF86 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		949522121E7BF62A00812390 /* MKHProjGenExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MKHProjGenExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		949522121E7BF62A00812390 /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
 		949BB4491E87E43E008F599B /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		949BB44A1E87E43E008F599B /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		949BB44B1E87E43E008F599B /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				943C0C021E7B134500C8DF86 /* MKHProjGen.framework */,
-				943C0C401E7B196200C8DF86 /* MKHProjGenLauncher */,
-				949522121E7BF62A00812390 /* MKHProjGenExample */,
+				943C0C401E7B196200C8DF86 /* Launcher */,
+				949522121E7BF62A00812390 /* Example */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,9 +249,9 @@
 			productReference = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		943C0C3F1E7B196200C8DF86 /* MKHProjGenLauncher */ = {
+		943C0C3F1E7B196200C8DF86 /* Launcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 943C0C441E7B196200C8DF86 /* Build configuration list for PBXNativeTarget "MKHProjGenLauncher" */;
+			buildConfigurationList = 943C0C441E7B196200C8DF86 /* Build configuration list for PBXNativeTarget "Launcher" */;
 			buildPhases = (
 				943C0C3C1E7B196200C8DF86 /* Sources */,
 				943C0C3D1E7B196200C8DF86 /* Frameworks */,
@@ -262,14 +262,14 @@
 			dependencies = (
 				949521F31E7B2A2600812390 /* PBXTargetDependency */,
 			);
-			name = MKHProjGenLauncher;
+			name = Launcher;
 			productName = MKHProjGenLauncher;
-			productReference = 943C0C401E7B196200C8DF86 /* MKHProjGenLauncher */;
+			productReference = 943C0C401E7B196200C8DF86 /* Launcher */;
 			productType = "com.apple.product-type.tool";
 		};
-		949522071E7BF62A00812390 /* MKHProjGenExample */ = {
+		949522071E7BF62A00812390 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "MKHProjGenExample" */;
+			buildConfigurationList = 9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				9495220A1E7BF62A00812390 /* Sources */,
 				9495220C1E7BF62A00812390 /* Frameworks */,
@@ -280,9 +280,9 @@
 			dependencies = (
 				949522081E7BF62A00812390 /* PBXTargetDependency */,
 			);
-			name = MKHProjGenExample;
+			name = Example;
 			productName = MKHProjGenLauncher;
-			productReference = 949522121E7BF62A00812390 /* MKHProjGenExample */;
+			productReference = 949522121E7BF62A00812390 /* Example */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -323,8 +323,8 @@
 			projectRoot = "";
 			targets = (
 				943C0C011E7B134500C8DF86 /* MKHProjGen */,
-				943C0C3F1E7B196200C8DF86 /* MKHProjGenLauncher */,
-				949522071E7BF62A00812390 /* MKHProjGenExample */,
+				943C0C3F1E7B196200C8DF86 /* Launcher */,
+				949522071E7BF62A00812390 /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -651,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		943C0C441E7B196200C8DF86 /* Build configuration list for PBXNativeTarget "MKHProjGenLauncher" */ = {
+		943C0C441E7B196200C8DF86 /* Build configuration list for PBXNativeTarget "Launcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				943C0C451E7B196200C8DF86 /* Debug */,
@@ -660,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "MKHProjGenExample" */ = {
+		9495220F1E7BF62A00812390 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				949522101E7BF62A00812390 /* Debug */,
