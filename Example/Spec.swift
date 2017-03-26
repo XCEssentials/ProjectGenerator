@@ -18,7 +18,9 @@ let BundleId =
 
 //===
 
-let project = Project("Main") { p in
+let specFormat = Spec.Format.v1_3_0
+
+let project = Project(My.repoName) { p in
     
     p.configurations.all.override(
         
