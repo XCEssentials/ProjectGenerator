@@ -30,6 +30,7 @@
 		949BB4691E87E43E008F599B /* Target.Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB4591E87E43E008F599B /* Target.Script.swift */; };
 		949BB46A1E87E43E008F599B /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB45A1E87E43E008F599B /* Target.swift */; };
 		949BB46B1E87E43E008F599B /* Target.Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB45B1E87E43E008F599B /* Target.Type.swift */; };
+		949BB46D1E87E96A008F599B /* Spec.1.3.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB46C1E87E96A008F599B /* Spec.1.3.0.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		949BB4591E87E43E008F599B /* Target.Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Script.swift; sourceTree = "<group>"; };
 		949BB45A1E87E43E008F599B /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		949BB45B1E87E43E008F599B /* Target.Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Target.Type.swift; sourceTree = "<group>"; };
+		949BB46C1E87E96A008F599B /* Spec.1.3.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.1.3.0.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +200,9 @@
 		949BB4531E87E43E008F599B /* Spec */ = {
 			isa = PBXGroup;
 			children = (
-				949BB4541E87E43E008F599B /* Spec.1.2.1.swift */,
 				949BB4551E87E43E008F599B /* Spec.swift */,
+				949BB4541E87E43E008F599B /* Spec.1.2.1.swift */,
+				949BB46C1E87E96A008F599B /* Spec.1.3.0.swift */,
 			);
 			path = Spec;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949BB45D1E87E43E008F599B /* Manager.swift in Sources */,
+				949BB46D1E87E96A008F599B /* Spec.1.3.0.swift in Sources */,
 				949BB45F1E87E43E008F599B /* Platform.swift in Sources */,
 				949BB45C1E87E43E008F599B /* Device.swift in Sources */,
 				949BB45E1E87E43E008F599B /* Misc.swift in Sources */,

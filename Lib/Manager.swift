@@ -12,7 +12,7 @@ enum Manager
     public
     static
     func prepareSpec(
-        version: String = "1.2.1",
+        _ format: Spec.Format,
         for project: Project
         ) -> String
     {
@@ -20,13 +20,13 @@ enum Manager
         
         //===
         
-        switch version
+        switch format
         {
-            case "1.2.1":
+            case .v1_2_1:
                 rawSpec = Spec_1_2_1.generate(for: project)
             
-            default:
-                rawSpec = Spec_1_2_1.generate(for: project)
+            case .v1_3_0:
+                rawSpec = Spec_1_3_0.generate(for: project)
         }
         
         //===

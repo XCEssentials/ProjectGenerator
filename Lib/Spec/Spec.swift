@@ -27,7 +27,21 @@ func <<< (list: inout RawSpec, elements: RawSpec)
 
 //===
 
+public
 enum Spec
+{
+    public
+    enum Format: String
+    {
+        case
+            v1_2_1 = "1.2.1",
+            v1_3_0 = "1.3.0"
+    }
+}
+
+//===
+
+extension Spec
 {
     static
     func ident(_ idention: Int) -> String
