@@ -8,7 +8,7 @@
 
 import Foundation
 
-import MKHProjGen
+import XCEProjectGenerator
 
 //===
 

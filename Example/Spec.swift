@@ -1,4 +1,4 @@
-import MKHProjGen
+import XCEProjectGenerator
 
 //===
 
