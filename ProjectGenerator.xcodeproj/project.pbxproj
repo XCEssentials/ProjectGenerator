@@ -10,9 +10,9 @@
 		943179991E7D82D500F3796D /* Project.Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943179981E7D820C00F3796D /* Project.Struct.swift */; };
 		943C0C291E7B14CB00C8DF86 /* MKHProjGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 943C0C141E7B141400C8DF86 /* MKHProjGen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		943C0C4C1E7B198D00C8DF86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C4A1E7B198D00C8DF86 /* main.swift */; };
-		949521F41E7B2A2C00812390 /* MKHProjGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */; };
+		949521F41E7B2A2C00812390 /* XCEProjectGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* XCEProjectGenerator.framework */; };
 		9495220B1E7BF62A00812390 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C4A1E7B198D00C8DF86 /* main.swift */; };
-		9495220D1E7BF62A00812390 /* MKHProjGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */; };
+		9495220D1E7BF62A00812390 /* XCEProjectGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943C0C021E7B134500C8DF86 /* XCEProjectGenerator.framework */; };
 		949522131E7BF66C00812390 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C0C481E7B198D00C8DF86 /* Spec.swift */; };
 		949BB45C1E87E43E008F599B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB4491E87E43E008F599B /* Device.swift */; };
 		949BB45D1E87E43E008F599B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BB44A1E87E43E008F599B /* Manager.swift */; };
@@ -73,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		943179981E7D820C00F3796D /* Project.Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.Struct.swift; path = ../../../../Project.Struct.swift; sourceTree = "<group>"; };
-		943C0C021E7B134500C8DF86 /* MKHProjGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKHProjGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		943C0C021E7B134500C8DF86 /* XCEProjectGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCEProjectGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C141E7B141400C8DF86 /* MKHProjGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHProjGen.h; sourceTree = "<group>"; };
 		943C0C401E7B196200C8DF86 /* Launcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Launcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		943C0C481E7B198D00C8DF86 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				949521F41E7B2A2C00812390 /* MKHProjGen.framework in Frameworks */,
+				949521F41E7B2A2C00812390 /* XCEProjectGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9495220D1E7BF62A00812390 /* MKHProjGen.framework in Frameworks */,
+				9495220D1E7BF62A00812390 /* XCEProjectGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			children = (
 				943C0C471E7B198D00C8DF86 /* Example */,
 				943C0C491E7B198D00C8DF86 /* Launcher */,
-				949BB4481E87E43E008F599B /* Lib */,
+				949BB4481E87E43E008F599B /* Src */,
 				943C0C131E7B141400C8DF86 /* Src-Extra */,
 				943C0C031E7B134500C8DF86 /* Products */,
 			);
@@ -139,7 +139,7 @@
 		943C0C031E7B134500C8DF86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				943C0C021E7B134500C8DF86 /* MKHProjGen.framework */,
+				943C0C021E7B134500C8DF86 /* XCEProjectGenerator.framework */,
 				943C0C401E7B196200C8DF86 /* Launcher */,
 				949522121E7BF62A00812390 /* Example */,
 			);
@@ -171,7 +171,7 @@
 			path = Launcher;
 			sourceTree = "<group>";
 		};
-		949BB4481E87E43E008F599B /* Lib */ = {
+		949BB4481E87E43E008F599B /* Src */ = {
 			isa = PBXGroup;
 			children = (
 				949BB4491E87E43E008F599B /* Device.swift */,
@@ -182,7 +182,7 @@
 				949BB4531E87E43E008F599B /* Spec */,
 				949BB4561E87E43E008F599B /* Target */,
 			);
-			path = Lib;
+			path = Src;
 			sourceTree = "<group>";
 		};
 		949BB44D1E87E43E008F599B /* Project */ = {
@@ -233,9 +233,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		943C0C011E7B134500C8DF86 /* MKHProjGen */ = {
+		943C0C011E7B134500C8DF86 /* ProjectGenerator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 943C0C0A1E7B134500C8DF86 /* Build configuration list for PBXNativeTarget "MKHProjGen" */;
+			buildConfigurationList = 943C0C0A1E7B134500C8DF86 /* Build configuration list for PBXNativeTarget "ProjectGenerator" */;
 			buildPhases = (
 				943C0BFD1E7B134500C8DF86 /* Sources */,
 				943C0BFE1E7B134500C8DF86 /* Frameworks */,
@@ -247,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = MKHProjGen;
+			name = ProjectGenerator;
 			productName = MKHProjGen;
-			productReference = 943C0C021E7B134500C8DF86 /* MKHProjGen.framework */;
+			productReference = 943C0C021E7B134500C8DF86 /* XCEProjectGenerator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		943C0C3F1E7B196200C8DF86 /* Launcher */ = {
@@ -313,7 +313,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 943C0BFC1E7B134500C8DF86 /* Build configuration list for PBXProject "MKHProjGen" */;
+			buildConfigurationList = 943C0BFC1E7B134500C8DF86 /* Build configuration list for PBXProject "ProjectGenerator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -325,7 +325,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				943C0C011E7B134500C8DF86 /* MKHProjGen */,
+				943C0C011E7B134500C8DF86 /* ProjectGenerator */,
 				943C0C3F1E7B196200C8DF86 /* Launcher */,
 				949522071E7BF62A00812390 /* Example */,
 			);
@@ -409,12 +409,12 @@
 /* Begin PBXTargetDependency section */
 		949521F31E7B2A2600812390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 943C0C011E7B134500C8DF86 /* MKHProjGen */;
+			target = 943C0C011E7B134500C8DF86 /* ProjectGenerator */;
 			targetProxy = 949521F21E7B2A2600812390 /* PBXContainerItemProxy */;
 		};
 		949522081E7BF62A00812390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 943C0C011E7B134500C8DF86 /* MKHProjGen */;
+			target = 943C0C011E7B134500C8DF86 /* ProjectGenerator */;
 			targetProxy = 949522091E7BF62A00812390 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -443,7 +443,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -495,7 +495,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -527,11 +527,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Info/MKHProjGen.plist;
+				INFOPLIST_FILE = Info/Fwk.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = maxim.khatskevich.MKHProjGen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.XCEssentials.ProjectGenerator;
+				PRODUCT_NAME = XCEProjectGenerator;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -548,11 +548,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Info/MKHProjGen.plist;
+				INFOPLIST_FILE = Info/Fwk.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = maxim.khatskevich.MKHProjGen;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.XCEssentials.ProjectGenerator;
+				PRODUCT_NAME = XCEProjectGenerator;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -637,7 +637,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		943C0BFC1E7B134500C8DF86 /* Build configuration list for PBXProject "MKHProjGen" */ = {
+		943C0BFC1E7B134500C8DF86 /* Build configuration list for PBXProject "ProjectGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				943C0C081E7B134500C8DF86 /* Debug */,
@@ -646,7 +646,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		943C0C0A1E7B134500C8DF86 /* Build configuration list for PBXNativeTarget "MKHProjGen" */ = {
+		943C0C0A1E7B134500C8DF86 /* Build configuration list for PBXNativeTarget "ProjectGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				943C0C0B1E7B134500C8DF86 /* Debug */,

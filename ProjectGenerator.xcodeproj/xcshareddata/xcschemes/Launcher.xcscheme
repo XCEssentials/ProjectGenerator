@@ -17,7 +17,7 @@
                BlueprintIdentifier = "943C0C3F1E7B196200C8DF86"
                BuildableName = "Launcher"
                BlueprintName = "Launcher"
-               ReferencedContainer = "container:MKHProjGen.xcodeproj">
+               ReferencedContainer = "container:ProjectGenerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "943C0C3F1E7B196200C8DF86"
             BuildableName = "Launcher"
             BlueprintName = "Launcher"
-            ReferencedContainer = "container:MKHProjGen.xcodeproj">
+            ReferencedContainer = "container:ProjectGenerator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "943C0C3F1E7B196200C8DF86"
             BuildableName = "Launcher"
             BlueprintName = "Launcher"
-            ReferencedContainer = "container:MKHProjGen.xcodeproj">
+            ReferencedContainer = "container:ProjectGenerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -83,7 +83,7 @@
             BlueprintIdentifier = "943C0C3F1E7B196200C8DF86"
             BuildableName = "Launcher"
             BlueprintName = "Launcher"
-            ReferencedContainer = "container:MKHProjGen.xcodeproj">
+            ReferencedContainer = "container:ProjectGenerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
