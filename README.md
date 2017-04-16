@@ -39,7 +39,7 @@ To archive the goals listed above, this project has been made. Think of it as a 
 Use [Carthage](https://github.com/Carthage/Carthage) to install the tool into your project. Put into your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
 ```
-github "XCEssentials/ProjectGeneratorz" ~> 1.3
+github "XCEssentials/ProjectGenerator" ~> 1.3
 ```
 
 The project folder will be downloaded by [Carthage](https://github.com/Carthage/Carthage), but nothing will be built, that's expected behavior, ignor warnings from Carthage.
