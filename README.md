@@ -18,8 +18,7 @@ For vast majority of iOS developers, this tool should be already a good enough s
 
 - you have to learn a new language/syntax (not every iOS developer knows Ruby and feel comfortable to deal with it on daily basis);
 - you need to leave Xcode and switch to another text editor with proper syntax highlight for Ruby/YAML to edit the specification file, because Xcode does not support YAML and have limited syntax highligh for Ruby;
-- due to nature of Ruby/YAML, you do not have development time syntax check, you have to try to run the tool in order to disciover a syntax error in your specification;
-- Struct itself has few minor issues in architecture/implementation, so you have to duplicate some settings (just copy/paste) in several places across the specification file as a workaround for this behavior (overwise the result project file won't work/build properly out of the box).
+- due to nature of Ruby/YAML, you do not have development time syntax check, you have to try to run the tool in order to disciover a syntax error in your specification.
 
 ## Wishlist
 
