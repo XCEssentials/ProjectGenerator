@@ -8,7 +8,7 @@ Describe Xcode project declaratively in pure Swift.
 
 Xcode uses an undocumented proprietary format for describing project structure, settings, etc. in **`*.xcodeproj`** files. That kind of file is hard to read and understand for a human, impossible to merge without merge conflicts if changes were made on two different local copies of the same repo/project, or even on different branches inside the same repo on the same workstation. That makes working together on the same Xcode project file a nightmare, when you need to merge changes "*.xcodeproj" always has conflicts and developers have to resolve them manually, wasting lots of time for routine that might be done by computer. We need a better solution!
 
-## Partial solution
+## Existing solution
 
 There is a command line tool that allows developer to write project specification in a form of plain text configuration file (using Ruby or YAML) and then generate **`*.xcodeproj`** file on the fly from this specification - [Struct](https://github.com/workshop/struct).
 
@@ -21,16 +21,15 @@ For vast majority of iOS developers, this tool should be already a good enough s
 - due to nature of Ruby/YAML, you do not have development time syntax check, you have to try to run the tool in order to disciover a syntax error in your specification;
 - Struct itself has few minor issues in architecture/implementation, so you have to duplicate some settings (just copy/paste) in several places across the specification file as a workaround for this behavior (overwise the result project file won't work/build properly out of the box).
 
-## Ideal wishlist
+## Wishlist
 
-Based on the downsides of using Struct for project specification listed above, here is a list of wishes for an "ideal" tool that soleves same problem:
+Based on the downsides of Struct listed above, here is a list of wishes for an "ideal" tool like that:
 
 - write project specification in pure Swift;
 - use Xcode to edit specification file;
-- get full syntax highlight and real time highlight of errors in specification notation;
-- eliminate any issues Struct may have, make writing project specification experience nice and smooth, with as less steps/moves as possible.
+- get full syntax highlight and real time highlight of errors in specification notation.
 
-## Final solution
+## About this tool
 
 To archive the goals listed above, this project has been made. Think of it as a thin wrapper on top of [Struct](https://github.com/workshop/struct) CLI tool. It brings no extra functionality in comparison with [Struct](https://github.com/workshop/struct), but adds some convenience to writing project file specification.
 
