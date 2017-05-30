@@ -18,7 +18,7 @@ let BundleId =
 
 //===
 
-let specFormat = Spec.Format.v1_3_0
+let specFormat = Spec.Format.v2_1_0
 
 let project = Project(My.repoName) { p in
     
