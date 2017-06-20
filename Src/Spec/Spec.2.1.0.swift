@@ -600,9 +600,23 @@ enum Spec_2_1_0
             
             //===
             
-            result <<< processScripts(&idention, regulars: scripts.regulars)
-            result <<< processScripts(&idention, beforeBuild: scripts.beforeBuilds)
-            result <<< processScripts(&idention, afterBuild: scripts.afterBuilds)
+            if
+                !scripts.regulars.isEmpty
+            {
+                result <<< processScripts(&idention, regulars: scripts.regulars)
+            }
+            
+            if
+                !scripts.beforeBuilds.isEmpty
+            {
+                result <<< processScripts(&idention, beforeBuild: scripts.beforeBuilds)
+            }
+            
+            if
+                !scripts.afterBuilds.isEmpty
+            {
+                result <<< processScripts(&idention, afterBuild: scripts.afterBuilds)
+            }
             
             //===
             
