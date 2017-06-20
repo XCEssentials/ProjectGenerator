@@ -20,7 +20,7 @@ enum Spec_1_3_0
         
         // https://github.com/workshop/struct/wiki/Spec-format:-v1.3#version-number
         
-        result <<< (idention, Spec.key("version") + " \(Spec.Format.v1_3_0)")
+        result <<< (idention, Spec.key("version") + " \(Spec.Format.v1_3_0.rawValue)")
         
         //===
         
