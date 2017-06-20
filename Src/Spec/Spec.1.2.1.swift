@@ -19,7 +19,7 @@ enum Spec_1_2_1
         
         // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#version-number
         
-        result <<< (idention, Spec.key("version") + " \(Spec.Format.v1_2_1)")
+        result <<< (idention, Spec.key("version") + " \(Spec.Format.v1_2_1.rawValue)")
         
         //===
         
