@@ -2,7 +2,7 @@ import Foundation
 
 //===
 
-enum Spec_1_2_1
+enum Spec_2_1_0
 {
     static
     func generate(for p: Project) -> RawSpec
@@ -12,14 +12,15 @@ enum Spec_1_2_1
         
         //===
         
-        result <<< (idention, "# generated with MKHProjGen")
-        result <<< (idention, "# https://github.com/maximkhatskevich/MKHProjGen")
+        result <<< (idention, "# generated with XCEProjectGenerator")
+        result <<< (idention, "# https://github.com/XCEssentials/ProjectGenerator")
+        result <<< (idention, "# https://github.com/workshop/struct/wiki/Spec-format:-v2.0")
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#version-number
+        // https://github.com/workshop/struct/wiki/Spec-format:-v2.0#version-number
         
-        result <<< (idention, Spec.key("version") + " \(Spec.Format.v1_2_1)")
+        result <<< (idention, Spec.key("version") + " \(Spec.Format.v2_1_0)")
         
         //===
         
@@ -101,7 +102,7 @@ enum Spec_1_2_1
         _ c: Project.BuildConfiguration
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#configurations
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#configurations
         
         //===
         
@@ -124,7 +125,7 @@ enum Spec_1_2_1
         if
             let externalConfig = c.externalConfig
         {
-            // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#xcconfig-references
+            // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#xcconfig-references
             
             // NOTE: when using xcconfig files,
             // any overrides or profiles will be ignored.
@@ -137,18 +138,12 @@ enum Spec_1_2_1
             
             //===
             
-            // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#profiles
-            
-            result <<< (idention, Spec.key("profiles"))
-            
-            for p in b.profiles + c.profiles
-            {
-                result <<< (idention, "-" + Spec.value(p))
-            }
+            // NO profiles anymore
+            // https://github.com/workshop/struct/wiki/Migrating-from-Spec-1.3.1-to-Spec-2.0.0
             
             //===
             
-            // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#overrides
+            // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#overrides
             
             result <<< (idention, Spec.key("overrides"))
             idention += 1
@@ -178,7 +173,7 @@ enum Spec_1_2_1
         _ targets: [Project.Target]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#targets
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#targets
         
         //===
         
@@ -223,7 +218,7 @@ enum Spec_1_2_1
         _ t: Project.Target
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#targets
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#targets
         
         //===
         
@@ -239,13 +234,13 @@ enum Spec_1_2_1
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#platform
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#platform
         
         result <<< (idention, Spec.key("platform") + Spec.value(t.platform.rawValue))
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#type
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#type
         
         result <<< (idention, Spec.key("type") + Spec.value(t.type.rawValue))
         
@@ -255,7 +250,7 @@ enum Spec_1_2_1
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#sources
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#sources
         
         if
             !t.includes.isEmpty
@@ -270,7 +265,7 @@ enum Spec_1_2_1
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#excludes
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#excludes
         
         if
             !t.excludes.isEmpty
@@ -289,7 +284,25 @@ enum Spec_1_2_1
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#i18n-resources
+        // https://github.com/workshop/struct/wiki/Spec-format:-v2.0#options
+        
+        if
+            !t.sourceOptions.isEmpty
+        {
+            result <<< (idention, "source_options:")
+            idention += 1
+            
+            for (path, opt) in t.sourceOptions
+            {
+                result <<< (idention, Spec.key(path) + Spec.value(opt))
+            }
+            
+            idention -= 1
+        }
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#i18n-resources
         
         if
             !t.i18nResources.isEmpty
@@ -312,7 +325,7 @@ enum Spec_1_2_1
         
         //===
         
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#cocoapods
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#cocoapods
         
         if
             t.includeCocoapods
@@ -339,7 +352,7 @@ enum Spec_1_2_1
         _ deps: Project.Target.Dependencies
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#references
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#references
         
         //===
         
@@ -376,7 +389,7 @@ enum Spec_1_2_1
         fromSDK: [String]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#references
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#references
         
         //===
         
@@ -402,7 +415,7 @@ enum Spec_1_2_1
         targets: [String]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#references
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#references
         
         //===
         
@@ -428,7 +441,7 @@ enum Spec_1_2_1
         binaries: [Project.Target.BinaryDependency]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#references
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#references
         
         //===
         
@@ -455,7 +468,7 @@ enum Spec_1_2_1
         projects: [Project.Target.ProjectDependencies]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#references
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#references
         
         //===
         
@@ -566,7 +579,7 @@ enum Spec_1_2_1
         scripts: Project.Target.Scripts
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#scripts
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#scripts
         
         //===
         
@@ -609,7 +622,7 @@ enum Spec_1_2_1
         regulars: [String]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#scripts
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#scripts
         
         //===
         
@@ -635,7 +648,7 @@ enum Spec_1_2_1
         beforeBuild: [String]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#scripts
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#scripts
         
         //===
         
@@ -663,7 +676,7 @@ enum Spec_1_2_1
         afterBuild: [String]
         ) -> RawSpec
     {
-        // https://github.com/lyptt/struct/wiki/Spec-format:-v1.2#scripts
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#scripts
         
         //===
         
