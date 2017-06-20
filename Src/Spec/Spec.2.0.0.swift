@@ -1,11 +1,3 @@
-//
-//  Spec.1.3.0.swift
-//  MKHProjGen
-//
-//  Created by Maxim Khatskevich on 3/17/17.
-//  Copyright © 2017 Maxim Khatskevich. All rights reserved.
-//
-
 import Foundation
 
 //===
@@ -28,7 +20,7 @@ enum Spec_2_0_0
         
         // https://github.com/workshop/struct/wiki/Spec-format:-v2.0#version-number
         
-        result <<< (idention, Spec.key("version") + " 2.0.0")
+        result <<< (idention, Spec.key("version") + " \(Spec.Format.v2_0_0)")
         
         //===
         
