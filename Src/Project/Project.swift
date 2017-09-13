@@ -10,12 +10,18 @@ public
 struct Project
 {
     public
-    typealias BuildConfigurations =
-    (
-        all: BuildConfiguration.Base,
-        debug: BuildConfiguration,
-        release: BuildConfiguration
-    )
+    final
+    class BuildConfigurations
+    {
+        public
+        var all = BuildConfiguration.Base()
+        
+        public
+        var debug = BuildConfiguration.Defaults.General.debug()
+        
+        public
+        var release = BuildConfiguration.Defaults.General.release()
+    }
     
     //---
     
@@ -25,18 +31,7 @@ struct Project
     //---
     
     public
-    var configurations: BuildConfigurations =
-    (
-        BuildConfiguration.Base(
-            // nothing on this level
-        ),
-        BuildConfiguration.Defaults.General.debug(
-            //
-        ),
-        BuildConfiguration.Defaults.General.release(
-            //
-        )
-    )
+    let configurations = BuildConfigurations()
     
     public private(set)
     var targets: [Target] = []
@@ -70,4 +65,9 @@ struct Project
         targets
             .append(Target(platform, name, type, configureTarget))
     }
+    
+    //===
+    
+    public
+    var variants: [Project.Variant] = []
 }

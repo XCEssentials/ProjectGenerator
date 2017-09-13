@@ -1,13 +1,51 @@
 //
-//  Target.swift
-//  MKHProjGen
+//  Variant.swift
+//  ProjectGenerator
 //
-//  Created by Maxim Khatskevich on 3/16/17.
+//  Created by Maxim Khatskevich on 2017-09-13.
 //  Copyright © 2017 Maxim Khatskevich. All rights reserved.
 //
 
+
 public
 extension Project
+{
+    public
+    struct Variant
+    {
+        public
+        let name: String
+        
+        //---
+        
+        public
+        init(_ name: String, _ configure: ((inout Project.Variant) -> Void)?)
+        {
+            self.name = name
+            configure?(&self)
+        }
+        
+        //---
+        
+        public private(set)
+        var targets: [Target] = []
+        
+        public
+        mutating
+        func target(
+            _ name: String,
+            _ configureTarget: (inout Target) -> Void
+            )
+        {
+            targets.append(Target(name, configureTarget))
+        }
+    }
+}
+
+//===
+
+public
+extension Project.Variant
 {
     public
     struct Target
@@ -17,32 +55,26 @@ extension Project
         class BuildConfigurations
         {
             public
-            var all = Target.BuildConfiguration.Base()
+            var all = Project.Target.BuildConfiguration.Base()
             
             public
-            var debug = Target.BuildConfiguration(
+            var debug = Project.Target.BuildConfiguration(
                 Project.BuildConfiguration.Defaults.iOS.debug().name
             )
             
             public
-            var release = Target.BuildConfiguration(
+            var release = Project.Target.BuildConfiguration(
                 Project.BuildConfiguration.Defaults.iOS.release().name
             )
         }
         
-        //---
-        
+        //===
+
         public
         let name: String
         
-        public
-        let platform: Platform
-        
-        public
-        let type: InternalType
-        
-        //---
-        
+        //===
+
         public private(set)
         var includes: [String] = []
         
@@ -53,8 +85,8 @@ extension Project
             includes.append(contentsOf: paths)
         }
         
-        //---
-        
+        //===
+
         public private(set)
         var excludes: [String] = []
         
@@ -65,13 +97,13 @@ extension Project
             excludes.append(contentsOf: patterns)
         }
         
-        //---
-        
+        //===
+
         public
         var sourceOptions: [String: String] = [:]
         
-        //---
-        
+        //===
+
         public private(set)
         var i18nResources: [String] = []
         
@@ -82,22 +114,22 @@ extension Project
             i18nResources.append(contentsOf: paths)
         }
         
-        //---
-        
+        //===
+
         public
         let configurations = Target.BuildConfigurations()
         
         public
-        var dependencies = Dependencies()
+        var dependencies = Project.Target.Dependencies()
         
         public
-        var scripts = Scripts()
+        var scripts = Project.Target.Scripts()
         
         public
         var includeCocoapods = false
         
-        //---
-        
+        //===
+
         public private(set)
         var tests: [Target] = []
         
@@ -108,26 +140,7 @@ extension Project
             _ configureTarget: (inout Target) -> Void
             )
         {
-            var ut = Target(self.platform, name, .unitTest, configureTarget)
-            
-            //===
-            
-            ut.dependencies.otherTarget(self.name)
-            
-            if
-                type == .app
-            {
-                ut.configurations.all.override(
-                    
-                    // https://github.com/workshop/struct/blob/master/examples/iOS_Application/project.yml#L115
-                    "TEST_HOST"
-                        <<< "$(BUILT_PRODUCTS_DIR)/\(self.name).app/\(self.name)"
-                )
-            }
-            
-            //===
-            
-            tests.append(ut)
+            tests.append(Target(name, configureTarget))
         }
         
         public
@@ -137,28 +150,24 @@ extension Project
             _ configureTarget: (inout Target) -> Void
             )
         {
-            var uit = Target(self.platform, name, .uiTest, configureTarget)
+            var uit = Target(name, configureTarget)
             
             uit.dependencies.otherTarget(self.name)
             
-            //===
+            //---
             
             tests.append(uit)
         }
         
-        //---
-        
+        //===
+
         // internal
         init(
-            _ platform: Platform,
             _ name: String,
-            _ type: InternalType,
             _ configureTarget: (inout Target) -> Void
             )
         {
             self.name = name
-            self.platform = platform
-            self.type = type
             
             //---
             
