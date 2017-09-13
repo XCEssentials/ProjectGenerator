@@ -65,4 +65,9 @@ struct Project
         targets
             .append(Target(platform, name, type, configureTarget))
     }
+    
+    //===
+    
+    public
+    var variants: [Project.Variant] = []
 }
