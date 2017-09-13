@@ -13,12 +13,22 @@ extension Project
     struct Target
     {
         public
-        typealias BuildConfigurations =
-        (
-            all: BuildConfiguration.Base,
-            debug: BuildConfiguration,
-            release: BuildConfiguration
-        )
+        final
+        class BuildConfigurations
+        {
+            public
+            var all = Target.BuildConfiguration.Base()
+            
+            public
+            var debug = Target.BuildConfiguration(
+                Project.BuildConfiguration.Defaults.iOS.debug().name
+            )
+            
+            public
+            var release = Target.BuildConfiguration(
+                Project.BuildConfiguration.Defaults.iOS.release().name
+            )
+        }
         
         //---
         
@@ -75,18 +85,7 @@ extension Project
         //---
         
         public
-        var configurations: BuildConfigurations =
-        (
-            Project.Target.BuildConfiguration.Base(
-                //
-            ),
-            Project.Target.BuildConfiguration(
-                Project.BuildConfiguration.Defaults.iOS.debug().name
-            ),
-            Project.Target.BuildConfiguration(
-                Project.BuildConfiguration.Defaults.iOS.release().name
-            )
-        )
+        let configurations = Target.BuildConfigurations()
         
         public
         var dependencies = Dependencies()
