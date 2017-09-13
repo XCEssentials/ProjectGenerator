@@ -41,7 +41,8 @@ let project = Project(params.repoName) { project in
     
     project.target("App", .iOS, .framework) { app in
         
-        app.include("Src")
+        app.include("Src-Common")
+        // see variants
         
         //---
         
@@ -72,7 +73,8 @@ let project = Project(params.repoName) { project in
     
         app.unitTests { appTests in
             
-            appTests.include("Tst")
+            appTests.include("Tst-Common")
+            // see variants
             
             //---
             
@@ -96,4 +98,40 @@ let project = Project(params.repoName) { project in
             )
         }
     }
+    
+    //---
+    
+    project.variants = [
+        
+        Project.Variant("General") { (variant: inout Project.Variant) in
+            
+            variant.target("App") { app in
+                
+                app.include("Src")
+                
+                //---
+                
+                app.unitTests { appTests in
+                    
+                    appTests.include("Tst")
+                }
+            }
+        }
+        ,
+        
+        Project.Variant("SpecialEdition") { (variant: inout Project.Variant) in
+            
+            variant.target("App") { app in
+                
+                app.include("Src-Special")
+                
+                //---
+                
+                app.unitTests { appTests in
+                    
+                    appTests.include("Tst-Special")
+                }
+            }
+        }
+    ]
 }

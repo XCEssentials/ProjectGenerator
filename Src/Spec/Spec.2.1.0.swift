@@ -32,6 +32,30 @@ enum Spec_2_1_0
         
         //===
         
+        result <<< process(&idention, variants: p.variants, of: p)
+        
+        //===
+        
+        result <<< (0, "") // empty line in the EOF
+        
+        //===
+        
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        variants: [Project.Variant],
+        of baseProject: Project
+        ) -> RawSpec
+    {
+        var result: RawSpec = []
+        
+        //===
+        
         result <<< (idention, Spec.key("variants"))
         
         idention += 1
@@ -44,13 +68,230 @@ enum Spec_2_1_0
         
         idention -= 1
         
-        result <<< (idention, Spec.key(p.name))
+        if
+            variants.isEmpty
+        {
+            result <<< (idention, Spec.key(baseProject.name))
+        }
+        else
+        {
+            result <<< process(&idention, variants: variants)
+        }
         
         idention -= 1
         
         //===
         
-        result <<< (0, "") // empty line in the EOF
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        variants: [Project.Variant]
+        ) -> RawSpec
+    {
+        // https://github.com/workshop/struct/wiki/Spec-format:-v2.0#variants
+        
+        //===
+        
+        var result: RawSpec = []
+        
+        //===
+        
+        for v in variants
+        {
+            result <<< (idention, Spec.key(v.name))
+            
+            idention += 1
+            
+            for t in v.targets
+            {
+                result <<< process(&idention, t)
+                
+                //===
+                
+                for tst in t.tests
+                {
+                    result <<< process(&idention, tst)
+                }
+            }
+            
+            idention -= 1
+        }
+        
+        //===
+        
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        _ t: Project.Variant.Target
+        ) -> RawSpec
+    {
+        var result: RawSpec = []
+        
+        //===
+        
+        result <<< (idention, Spec.key(t.name))
+        
+        //===
+        
+        idention += 1
+        
+        //===
+        
+        result <<< process(&idention, t.dependencies)
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#sources
+        
+        if
+            !t.includes.isEmpty
+        {
+            result <<< (idention, "sources:")
+            
+            for path in t.includes
+            {
+                result <<< (idention, "-" + Spec.value(path))
+            }
+        }
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#excludes
+        
+        if
+            !t.excludes.isEmpty
+        {
+            result <<< (idention, Spec.key("excludes"))
+            idention += 1
+            result <<< (idention, Spec.key("files"))
+            
+            for path in t.excludes
+            {
+                result <<< (idention, "-" + Spec.value(path))
+            }
+            
+            idention -= 1
+        }
+        
+        //===
+        
+        // https://github.com/workshop/struct/wiki/Spec-format:-v2.0#options
+        
+        if
+            !t.sourceOptions.isEmpty
+        {
+            result <<< (idention, "source_options:")
+            idention += 1
+            
+            for (path, opt) in t.sourceOptions
+            {
+                result <<< (idention, Spec.key(path) + Spec.value(opt))
+            }
+            
+            idention -= 1
+        }
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#i18n-resources
+        
+        if
+            !t.i18nResources.isEmpty
+        {
+            result <<< (idention, Spec.key("i18n-resources"))
+            
+            for path in t.i18nResources
+            {
+                result <<< (idention, "-" + Spec.value(path))
+            }
+        }
+        
+        //===
+        
+        result <<< process(&idention, t.configurations)
+        
+        //===
+        
+        result <<< process(&idention, scripts: t.scripts)
+        
+        //===
+        
+        // https://github.com/lyptt/struct/wiki/Spec-format:-v2.0#cocoapods
+        
+        if
+            t.includeCocoapods
+        {
+            result <<<
+                (idention,
+                 Spec.key("includes_cocoapods") + Spec.value(t.includeCocoapods))
+        }
+        
+        //===
+        
+        idention -= 1
+        
+        //===
+        
+        return result
+    }
+    
+    //===
+    
+    static
+    func process(
+        _ idention: inout Int,
+        _ set: Project.Variant.Target.BuildConfigurations
+        ) -> RawSpec
+    {
+        // https://github.com/lyptt/struct/issues/77#issuecomment-287573381
+        
+        //===
+        
+        var result: RawSpec = []
+        
+        //===
+        
+        if
+            !set.all.overrides.isEmpty ||
+            !set.debug.overrides.isEmpty ||
+            !set.release.overrides.isEmpty
+        {
+            result <<< (idention, Spec.key("configurations"))
+            
+            //===
+            
+            idention += 1
+            
+            //===
+            
+            if
+                !set.all.overrides.isEmpty ||
+                !set.debug.overrides.isEmpty
+            {
+                result <<< process(&idention, set.all, set.debug)
+            }
+            
+            if
+                !set.all.overrides.isEmpty ||
+                !set.release.overrides.isEmpty
+            {
+                result <<< process(&idention, set.all, set.release)
+            }
+            
+            //===
+            
+            idention -= 1
+        }
         
         //===
         
