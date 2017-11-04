@@ -16,6 +16,12 @@ let bundleId =
     tst: "\(params.companyIdentifier).\(params.repoName).Tst"
 )
 
+let targetId =
+(
+    fwk: "Fwk",
+    tst: "Tst"
+)
+
 //===
 
 let specFormat = Spec.Format.v2_1_0
@@ -39,14 +45,14 @@ let project = Project(params.repoName) { project in
     
     //---
     
-    project.target("App", .iOS, .framework) { app in
+    project.target(targetId.fwk, .iOS, .framework) { fwk in
         
-        app.include("Src-Common")
+        fwk.include("Src-Common")
         // see variants
         
         //---
         
-        app.configurations.all.override(
+        fwk.configurations.all.override(
             
             "IPHONEOS_DEPLOYMENT_TARGET" <<< params.deploymentTarget, // bug wokraround
         
@@ -64,21 +70,21 @@ let project = Project(params.repoName) { project in
             "SKIP_INSTALL" <<< "YES"
         )
         
-        app.configurations.debug.override(
+        fwk.configurations.debug.override(
             
             "MTL_ENABLE_DEBUG_INFO" <<< true
         )
         
         //---
     
-        app.unitTests { appTests in
+        fwk.unitTests(targetId.tst) { tst in
             
-            appTests.include("Tst-Common")
+            tst.include("Tst-Common")
             // see variants
             
             //---
             
-            appTests.configurations.all.override(
+            tst.configurations.all.override(
                 
                 // very important for unit tests,
                 // prevents the error when unit test do not start at all
@@ -92,7 +98,7 @@ let project = Project(params.repoName) { project in
                 "FRAMEWORK_SEARCH_PATHS" <<< "$(inherited) $(BUILT_PRODUCTS_DIR)"
             )
             
-            appTests.configurations.debug.override(
+            tst.configurations.debug.override(
                 
                 "MTL_ENABLE_DEBUG_INFO" <<< true
             )
@@ -105,15 +111,15 @@ let project = Project(params.repoName) { project in
         
         Project.Variant("General") { (variant: inout Project.Variant) in
             
-            variant.target("App") { app in
+            variant.target(targetId.fwk) { fwk in
                 
-                app.include("Src")
+                fwk.include("Src")
                 
                 //---
                 
-                app.unitTests { appTests in
+                fwk.unitTests(targetId.tst) { tst in
                     
-                    appTests.include("Tst")
+                    tst.include("Tst")
                 }
             }
         }
@@ -121,15 +127,15 @@ let project = Project(params.repoName) { project in
         
         Project.Variant("SpecialEdition") { (variant: inout Project.Variant) in
             
-            variant.target("App") { app in
+            variant.target(targetId.fwk) { fwk in
                 
-                app.include("Src-Special")
+                fwk.include("Src-Special")
                 
                 //---
                 
-                app.unitTests { appTests in
+                fwk.unitTests(targetId.tst) { tst in
                     
-                    appTests.include("Tst-Special")
+                    tst.include("Tst-Special")
                 }
             }
         }
