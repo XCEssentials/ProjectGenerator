@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.0</string>
+	<string>2.3.0</string>
 	<key>CFBundleVersion</key>
-	<string>18</string>
+	<string>19</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017 Maxim Khatskevich. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
