@@ -152,7 +152,6 @@
 				943C0BFE1E7B134500C8DF86 /* Frameworks */,
 				943C0BFF1E7B134500C8DF86 /* Headers */,
 				943C0C001E7B134500C8DF86 /* Resources */,
-				943C0C791E7B258700C8DF86 /* BuildStatic */,
 			);
 			buildRules = (
 			);
@@ -206,25 +205,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		943C0C791E7B258700C8DF86 /* BuildStatic */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(LD_DEPENDENCY_INFO_FILE)",
-			);
-			name = BuildStatic;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\ncd \"$BUILT_PRODUCTS_DIR\"\n\narchs=( $ARCHS ) lfls=()\nfor v in \"${archs[@]/#/LINK_FILE_LIST_${CURRENT_VARIANT}_}\"; do\nlfls+=( -filelist \"${!v}\" )\ndone\n\nlibtool -static -syslibroot \"$SDKROOT\" -L. \"${lfls[@]}\" -o \"$EXECUTABLE_PATH\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		943C0BFD1E7B134500C8DF86 /* Sources */ = {
