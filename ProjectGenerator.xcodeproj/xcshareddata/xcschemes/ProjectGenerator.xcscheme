@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "949522071E7BF62A00812390"
-               BuildableName = "Example"
-               BlueprintName = "Example"
+               BlueprintIdentifier = "943C0C011E7B134500C8DF86"
+               BuildableName = "XCEProjectGenerator.framework"
+               BlueprintName = "ProjectGenerator"
                ReferencedContainer = "container:ProjectGenerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,15 +30,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "949522071E7BF62A00812390"
-            BuildableName = "Example"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:ProjectGenerator.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -53,22 +44,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "949522071E7BF62A00812390"
-            BuildableName = "Example"
-            BlueprintName = "Example"
+            BlueprintIdentifier = "943C0C011E7B134500C8DF86"
+            BuildableName = "XCEProjectGenerator.framework"
+            BlueprintName = "ProjectGenerator"
             ReferencedContainer = "container:ProjectGenerator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "&quot;$(SRCROOT)&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -78,16 +62,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "949522071E7BF62A00812390"
-            BuildableName = "Example"
-            BlueprintName = "Example"
+            BlueprintIdentifier = "943C0C011E7B134500C8DF86"
+            BuildableName = "XCEProjectGenerator.framework"
+            BlueprintName = "ProjectGenerator"
             ReferencedContainer = "container:ProjectGenerator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
